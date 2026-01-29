@@ -4,7 +4,7 @@ a {
   display: inline-block;
   margin-top: 18px;
   padding: 14px 28px;
-  background: #1e88e5;
+  background: var(--blue-main);
   color: white;
   text-decoration: none;
   border-radius: 35px;
@@ -18,13 +18,7 @@ a:hover {
 }
 
 /* ===== RSVP ===== */
-.section a {
-  background: #0d47a1;
-}
 
-.section a:hover {
-  background: #08306b;
-}
 
 /* ===== SEPARADORES DE SECCIÓN ===== */
 .section:nth-child(even) {
@@ -64,8 +58,8 @@ a:hover {
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(13, 71, 161, 0.65),
-    rgba(13, 71, 161, 0.1)
+    var(--overlay-strong),
+    var(--overlay-soft)
   );
 }
 
@@ -164,7 +158,7 @@ a:hover {
 .countdown-title {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #0d47a1;
+  color: var(--blue-dark);
   margin-bottom: 20px;
 
   border-top: 3px;   /* 👈 solo arriba */
@@ -286,13 +280,13 @@ a:hover {
 .location-title {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #0d47a1;
+  color: var(--blue-dark);
   margin: 16px 16px 4px;
 }
 
 .location-p {
   font-size: 1rem;
-  color: #1976d2;
+  color: var(--blue-dark);
   margin: 0 16px 16px;
 }
 
@@ -310,7 +304,7 @@ a:hover {
   padding: 14px;
   border: none;
   border-radius: 30px;
-  background: #1976d2;
+  background: var(--blue-main);
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -318,7 +312,7 @@ a:hover {
 }
 
 .map-button:hover {
-  background: #0d47a1;
+  background: var(--blue-soft);
 }
 
 /* ===== GIFT SECTION ===== */
@@ -375,7 +369,7 @@ a:hover {
 .gift-footer {
   margin-top: 25px;
   font-size: 0.9rem;
-  color: #0d47a1;
+   color: var(--blue-dark);
 }
 
 /* ===== RSVP ===== */
@@ -465,6 +459,15 @@ a:hover {
 --font-hero: 'Fredoka', sans-serif;
   --font-title: 'Poppins', sans-serif;
   --font-body: 'Nunito', sans-serif;
+
+    --section-bg-1: linear-gradient(180deg, #ffffff, #bbdefb);
+  --section-bg-2: linear-gradient(180deg, #e3f2fd, #ec67c4);
+
+
+  --overlay-strong: rgba(76, 79, 255, 0.65);
+  --overlay-soft: rgba(255, 255, 255, 0.15);
+
+
 }
 
 
@@ -491,15 +494,6 @@ body {
   position: relative;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(13, 71, 161, 0.65),
-    rgba(13, 71, 161, 0.1)
-  );
-}
 
 .hero-content {
   position: absolute;
@@ -649,4 +643,120 @@ body {
   display: block;          /* 👈 asegura nueva línea */
   text-align: center;
   margin-bottom: 25px;
+}
+
+/* ===== THEME: GIRL ===== */
+body.theme-girl {
+  --blue-dark: #8e3a7a;
+  --blue-main: #d16ba5;
+  --blue-soft: #f7b2d9;
+  --blue-bg: #fde7f3;
+
+  --shadow-soft: 0 8px 18px rgba(209, 107, 165, 0.25);
+  --shadow-strong: 0 18px 40px rgba(209, 107, 165, 0.35);
+}
+
+/* ===== THEME: BOY ===== */
+body.theme-boy {
+  --blue-dark: #0d47a1;
+  --blue-main: #1976d2;
+  --blue-soft: #64b5f6;
+  --blue-bg: #e3f2fd;
+}
+
+/* ===== THEME: GIRL ===== */
+body.theme-girl {
+  --blue-dark: #7a2e5d;
+  --blue-main: #c85b9e;
+  --blue-soft: #f4a9d8;
+  --blue-bg: #fde4f2;
+
+  --shadow-soft: 0 8px 18px rgba(200, 91, 158, 0.25);
+  --shadow-strong: 0 18px 40px rgba(200, 91, 158, 0.35);
+
+  background: linear-gradient(
+    180deg,
+    #fde4f2,
+    #ff008c
+  );
+}
+
+/* ===== HOME ===== */
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  font-family: var(--font-hero);
+  color: var(--blue-dark);
+}
+
+.home-subtitle {
+  font-size: 1rem;
+  color: var(--blue-main);
+  margin: 15px 0 30px;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.home-btn {
+  padding: 16px 28px;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.home-btn:hover {
+  transform: scale(1.08);
+}
+
+.home-btn.boy {
+  background: linear-gradient(180deg, #1976d2, #0d47a1);
+}
+
+.home-btn.girl {
+  background: linear-gradient(180deg, #d16ba5, #8e3a7a);
+}
+
+.section:nth-child(odd) {
+  background: var(--section-bg-1);
+}
+
+.section:nth-child(even) {
+  background: var(--section-bg-1);
+}
+
+/* ===== THEME: GIRL ===== */
+body.theme-girl {
+  --blue-dark: #7a2e5d;
+  --blue-main: #c85b9e;
+  --blue-soft: #f4a9d8;
+  --blue-bg: #fde4f2;
+
+  /* 👇 FONDOS DE SECCIÓN ROSAS */
+  --section-bg-1: linear-gradient(180deg, #ffffff, #f9cfe6);
+  --section-bg-2: linear-gradient(180deg, #fde4f2, #ffffff);
+
+  --shadow-soft: 0 8px 18px rgba(200, 91, 158, 0.25);
+  --shadow-strong: 0 18px 40px rgba(200, 91, 158, 0.35);
+
+  --overlay-strong: rgba(200, 91, 158, 0.65);
+  --overlay-soft: rgba(200, 91, 158, 0.15);
+
+
 }

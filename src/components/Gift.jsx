@@ -7,7 +7,7 @@ export default function Gift({ items }) {
       <h3>Sugerencias de regalo</h3>
         <div className='gift-s'>
           <p className="gift-footer">
-        Tu presencia es el mejor regalo 💙
+        Tu presencia es el mejor regalo pero aqui estan una sugerencia de regalos:
         </p>  
         
         <div className="gift-grid">
